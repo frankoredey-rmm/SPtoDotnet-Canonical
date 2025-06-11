@@ -75,23 +75,31 @@ namespace ECommerceApi.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            // Create order
+            // Create order with required properties
             var order = new Order
             {
                 CustomerID = customer.CustomerID,
-                OrderDate = orderDto.OrderDate
+                OrderDate = orderDto.OrderDate,
+                Customer = customer,
+                OrderItems = new List<OrderItem>()
             };
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            // Create order item
+            // Create order item with required properties
             var orderItem = new OrderItem
             {
                 OrderID = order.OrderID,
                 ProductID = product.ProductID,
-                Quantity = orderDto.Quantity
+                Quantity = orderDto.Quantity,
+                Order = order,
+                Product = product
             };
             _context.OrderItems.Add(orderItem);
+            
+            // Add the order item to the order's collection
+            order.OrderItems.Add(orderItem);
+            
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetAllOrders), new { id = order.OrderID }, order);
