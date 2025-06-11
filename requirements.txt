@@ -1,0 +1,91 @@
+Based on a thorough inspection of the repository's code and documentation, here are the extracted business and functional requirements, as well as the technical specifications, detailed for recreation in any programming language:
+
+---
+
+## Business Requirements
+
+1. **Order Management for E-commerce**: The system must support the management of customer orders for an e-commerce business.
+2. **Customer Tracking**: The system must store and manage customer information, including names and unique email addresses.
+3. **Product Catalog**: The system must maintain a catalog of products, each with a unique name.
+4. **Order Processing**: The system must record orders placed by customers, including the date of the order.
+5. **Order Itemization**: Each order can contain multiple products, and the system must track the quantity of each product per order.
+
+---
+
+## Functional Requirements
+
+1. **Legacy Data Support**: The system must be able to import and migrate data from an existing, denormalized table (`CustomerOrders`) to a normalized schema.
+2. **CRUD Operations**:
+   - Retrieve all orders or orders by customer email.
+   - Insert new orders.
+   - Delete orders by ID.
+3. **Data Integrity**:
+   - Ensure unique customers by email.
+   - Ensure unique products by name.
+   - Maintain referential integrity between orders, customers, products, and order items.
+4. **Schema Mapping**: The system must provide a clear mapping from the old schema to the new normalized schema, supporting direct field-to-field transformations.
+
+---
+
+## Technical Specifications
+
+### Old Schema (`CustomerOrders` Table)
+- **Fields**:
+  - `OrderID` (INT, auto-increment, primary key)
+  - `CustomerName` (VARCHAR)
+  - `CustomerEmail` (VARCHAR)
+  - `ProductName` (VARCHAR)
+  - `Quantity` (INT)
+  - `OrderDate` (DATETIME)
+
+### New Normalized Schema
+
+- **Customers Table**
+  - `CustomerID` (INT, auto-increment, primary key)
+  - `Name` (VARCHAR, not null)
+  - `Email` (VARCHAR, not null, unique)
+
+- **Products Table**
+  - `ProductID` (INT, auto-increment, primary key)
+  - `ProductName` (VARCHAR, not null, unique)
+
+- **Orders Table**
+  - `OrderID` (INT, primary key)
+  - `CustomerID` (INT, not null, foreign key to Customers)
+  - `OrderDate` (DATETIME, not null)
+
+- **OrderItems Table**
+  - `OrderItemID` (INT, auto-increment, primary key)
+  - `OrderID` (INT, not null, foreign key to Orders)
+  - `ProductID` (INT, not null, foreign key to Products)
+  - `Quantity` (INT, not null)
+
+### Data Migration Logic
+
+- Insert unique customers and products from the old table.
+- Insert orders, linking to customers by email.
+- Insert order items, linking to products by name and orders by ID.
+
+### Stored Procedures (Legacy)
+
+- `GetOrdersByCustomerEmail(email)`: Returns all orders for a given customer email, ordered by date descending.
+- `InsertOrder(customerName, customerEmail, productName, quantity, orderDate)`: Inserts a new order.
+- `DeleteOrderById(orderID)`: Deletes an order by its ID.
+- `GetAllOrders()`: Returns all orders.
+
+### Schema Mapping (Old to New)
+
+- `CustomerOrders.CustomerName` → `Customers.Name`
+- `CustomerOrders.CustomerEmail` → `Customers.Email`
+- `CustomerOrders.ProductName` → `Products.ProductName`
+- `CustomerOrders.Quantity` → `OrderItems.Quantity`
+- `CustomerOrders.OrderID` → `Orders.OrderID`
+- `CustomerOrders.OrderDate` → `Orders.OrderDate`
+
+---
+
+## Additional Notes
+
+- All transformations are direct (no data type or format changes required).
+- The new schema is fully normalized to reduce redundancy and improve data integrity.
+- The migration process must ensure that all foreign key relationships are correctly established.

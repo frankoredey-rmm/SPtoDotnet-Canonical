@@ -1,0 +1,7 @@
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.csproj.AssemblyReference.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.AssemblyInfoInputs.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.AssemblyInfo.cs
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.csproj.CoreCompileInputs.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\NewStore.MvcApplicationPartsAssemblyInfo.cache
