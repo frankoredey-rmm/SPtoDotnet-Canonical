@@ -1,0 +1,8 @@
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.csproj.AssemblyReference.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.AssemblyInfoInputs.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.AssemblyInfo.cs
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.csproj.CoreCompileInputs.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\frank\Python\CodeGPT\Demos\SPtoDotnet-Canonical\obj\Debug\net8.0\ECommerceApi.sourcelink.json
