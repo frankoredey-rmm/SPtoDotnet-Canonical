@@ -31,7 +31,7 @@ namespace ECommerceApi.Data
                 .HasForeignKey(o => o.CustomerID);
 
             modelBuilder.Entity<OrderItem>()
-                .HasOne(oi => o.Order)
+                .HasOne(oi => oi.Order)
                 .WithMany(o => o.OrderItems)
                 .HasForeignKey(oi => oi.OrderID);
 

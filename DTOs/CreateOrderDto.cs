@@ -6,14 +6,14 @@ namespace ECommerceApi.DTOs
     public class CreateOrderDto
     {
         [Required]
-        public string CustomerName { get; set; }
+        public required string CustomerName { get; set; }
 
         [Required]
         [EmailAddress]
-        public string CustomerEmail { get; set; }
+        public required string CustomerEmail { get; set; }
 
         [Required]
-        public string ProductName { get; set; }
+        public required string ProductName { get; set; }
 
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Quantity must be at least 1")]

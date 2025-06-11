@@ -7,6 +7,6 @@ namespace ECommerceApi.Models
         public int ProductID { get; set; }
 
         [Required]
-        public string ProductName { get; set; }
+        public required string ProductName { get; set; }
     }
 }
