@@ -1,5 +1,5 @@
 Based on a thorough inspection of the repository's code and documentation, here are the extracted business and functional requirements, as well as the technical specifications, detailed for recreation in any programming language:
-
+ 
 ---
 
 ## Business Requirements
