@@ -1,0 +1,6 @@
+@SPtoDotnet_Canonical_HostAddress = http://localhost:5140
+
+GET {{SPtoDotnet_Canonical_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
